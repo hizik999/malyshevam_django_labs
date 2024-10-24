@@ -1,0 +1,19 @@
+.p6_1 {
+    width: 500px;
+    background-color: yellow;
+    font-family: "Arial";
+    font-size: 1em;
+}
+.p6_3 {
+    width: 500px;
+    background-color: violet;
+    font-family: "Times New Roman";
+    font-size: 1em;
+    font-weight: 700;
+}
+#p6_2 {
+    font-variant: small-caps
+}
+#p6_4 {
+    font-style: oblique;
+}

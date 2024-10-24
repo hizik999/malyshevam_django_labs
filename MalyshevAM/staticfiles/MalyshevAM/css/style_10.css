@@ -1,0 +1,17 @@
+.p10_1 {
+    background-color: yellow;
+    width: 400px;
+    height: 10vh;
+    border-top: 3px dotted blue;
+    border-bottom: 3px dashed blue;
+    border-left: 3px solid red;
+    border-right: 3px solid red;
+}
+.p10_2 {
+    background-color: violet;
+    width: 300px;
+    height: 200px;
+    min-width: 400px;
+    max-height: 100px;
+    border: 3px solid green;
+}

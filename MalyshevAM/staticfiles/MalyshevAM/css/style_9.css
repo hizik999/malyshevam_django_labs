@@ -1,0 +1,12 @@
+.p9_1 {
+    background-color: yellow;
+    width: 400px;
+    height: 10vh;
+}
+.p9_2 {
+    background-color: violet;
+    width: 300px;
+    height: 200px;
+    min-width: 400px;
+    max-height: 100px;
+}

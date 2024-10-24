@@ -1,0 +1,10 @@
+.list_1 {
+    width: 500px;
+    background-color: yellow;
+}
+.list_2 {
+    width: 500px;
+    background-color: violet;
+    list-style-type: square;
+    list-style-position: inside;
+}

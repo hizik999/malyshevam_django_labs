@@ -1,0 +1,9 @@
+.table_1 {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.table_2 {
+    caption-side: bottom;
+    border-spacing: 5px;
+    empty-cells: hide;
+}

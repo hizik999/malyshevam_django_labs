@@ -28,3 +28,5 @@ def praktikum4_3(request):
 def praktikum4_4(request):
     return render(request, 'blog/praktikum4_4.html')
 
+def praktikum5(request):
+    return render(request, 'blog/praktikum5.html')

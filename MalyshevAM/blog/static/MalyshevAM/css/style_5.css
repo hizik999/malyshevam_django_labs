@@ -1,0 +1,23 @@
+.p_1 {
+    width: 500px;
+    background-color: yellow;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+    line-height: 1.1em;
+    text-indent: 1%;
+}
+.p_3 {
+    width: 500px;
+    background-color: violet;
+    word-spacing: 12px;
+    letter-spacing: 2px;
+    line-height: 1.6em;
+    text-indent: 3%;
+    text-align: right;
+}
+#p_2 {
+    text-decoration: line-through;
+}
+#p_4 {
+     text-decoration: underline;
+}
