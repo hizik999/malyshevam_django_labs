@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практикум 2</title>
+    <style>
+        mark {
+            background-color: yellow;
+        }
+        .green_letter {
+            color: green;
+        }
+        .light_blue_letter {
+            color: #5555CC;
+        }
+        .orange_letter {
+            color: orange;
+        }
+        .paragraph {
+            width: 500px;
+            text-align: justify;
+            line-height: 1.2em;
+            margin: 1em;
+            margin-bottom: 1.5em;
+        }
+        .caption_h_1 {
+            font-size: 1.1em;
+            margin: 1em;
+        }
+        .caption_h_2 {
+            font-size: 1em;
+            margin: 1em;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        hr {
+            margin: 10px 0;
+        }
+        .author {
+            font-size: 0.9em;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <pre style="color: orange;">
+Осень наступила,
+Падают листья.
+Мне никто не нужен,
+Только Ты.
+    </pre>
+    <address style="color: green;">
+        Васюткин А.А.
+    </address>
+    <hr>
+    <p>
+        <em>Маркированный список</em> формируется парным тегом <strong>&lt;ul&gt;</strong> (от англ. <dfn>unorderedlist</dfn>).<br>
+        Сам элемент  &laquo;ul&raquo; используется, как контейнер для пунктов списка, <br>
+        которые формируются, как и в случае с нумерованными списками, 
+        <br>парными тегами <strong>&lt;li&gt;</strong> и располагаются друг за другом.
+    </p>
+
+    <pre>
+        **      **   **********  ***          ***   **
+            **      **   *********   ****        ****   **
+            **      **       **      ** **      ** **   **
+            **********       **      **  **    **  **   **
+            **********       **      **   ******   **   **
+            **      **       **      **    ****    **   **
+            **      **       **      **     **     **   **
+            **      **       **      **            **   *********
+            **      **       **      **            **   *********
+    </pre>
+
+    <h1 class="caption_h_1">Абзац, заголовки и преформатированный текст в HTML</h1>
+    <p class="paragraph">
+        <strong>Абзац</strong> и формирующий его тег <span class="green_letter">&lt;p&gt;</span>
+    </p>
+
+    <p class="paragraph">
+        Для разбиения текста на абзацы в HTML используется элемент <span class="green_letter">&laquo;Абзац&raquo;</span>, который формируется парным тегом <span class="light_blue_letter">&lt;p&gt;</span> от англ. paragraph &mdash; абзац). И хотя в некоторых случаях спецификация допускает отсутствие закрывающего тега, мы будем применять его всегда, явно формируя элемент &laquo;Абзац&raquo;. Добавим, что абзац относится к блочным элементам, поэтому по умолчанию начинается с новой строки и отделяется от остального содержимого вертикальными отступами.
+    </p>
+
+    <h2 class="caption_h_2">Создание заголовков. Теги &lt;h1&gt;&ndash;&lt;h6&gt;</h2>
+    <p class="paragraph">
+        Если возникает необходимость как-то назвать часть текста (например, параграф или раздел) и выделить его относительную важность, можно воспользоваться одним из шести заголовков разного уровня, которые формируются парными тегами от <span class="orange_letter">&lt;h1&gt;</span> до <span class="orange_letter">&lt;h6&gt;</span> (от англ. heading &ndash; заголовок) и также относятся к блочным элементам. Заголовок первого уровня отображается самым крупным шрифтом жирного начертания, остальные &ndash; поменьше, по мере убывания своей важности.
+    </p>
+
+    <h2 class="caption_h_2">Преформатированный текст. Тег &lt;pre&gt;</h2>
+    <p class="paragraph">
+        А что если нам нужно вывести исходный текст на экран без форматирования? Такая ситуация случается, например, когда нужно сохранить подряд идущие пробелы и переносы строк или просто сохранить исходное форматирование при отображении тех же примеров кода. В таких случаях можно применить элемент &laquo;преформатированный текст&raquo;, который формируется парным тегом <span class="orange_letter">&lt;pre&gt;</span> (от англ. preformatted text &ndash; предварительно форматированный текст). Браузеры отображают его как блочный элемент.
+    </p>
+
+    <h1>Не позволяй душе лениться</h1>
+    <hr>
+    <p>
+        Не позволяй душе лениться!<br>
+        Чтоб в ступе воду не толочь,<br>
+        Душа <i>обязана</i> трудиться<br>
+        И день и ночь, и день и ночь!
+    </p>
+    <p>
+        Гони её от дома к дому,<br>
+        Тащи с этапа на этап,<br>
+        По пустырю, по буераку<br>
+        Через сугроб, через ухаб!
+    </p>
+    <p>
+        Не разрешай ей спать в постели<br>
+        При свете утренней звезды,<br>
+        Держи ленивую в чёрном теле<br>
+        И не снимай с неё узды!
+    </p>
+    <hr>
+    <p class="author">
+        <small>В. Заболоцкий</small>
+    </p>
+
+    <h1>Welcome To GeeksforGeeks</h1>
+
+    <div><strong>Hello Geeks</strong></div>
+    <div><code>Hello Geeks</code><br><mark>Hello Geeks</mark></div>
+    <br>
+
+    <p>Hello GeeksforGeeks</p>
+    <p><strong>Hello GeeksforGeeks</strong></p>
+    <p><strong>Hello GeeksforGeeks</strong></p>
+
+    <br>
+    <div>Hello GeeksforGeeks</div>
+    <i>Hello GeeksforGeeks</i><br>
+    <em>Hello GeeksforGeeks</em>
+    <br>
+    <br>
+    <p>Hello GeeksforGeeks</p>
+    <mark>Hello GeeksforGeeks</mark><br>
+
+    <br>
+    <div>Hello GeeksforGeeks</div>
+    <span>Hello <span style="vertical-align: top; font-size: 0.7em">GeeksforGeeks</span></span><br>
+    <span>Hello <span style="vertical-align: bottom; font-size: 0.7em">GeeksforGeeks</span></span><br>
+    <br>
+
+    <br>
+    <div>Hello GeeksforGeeks</div>
+    <p style="vertical-align: top; font-size: 0.7em">Hello GeeksforGeeks</p>
+    <br>
+    <p>Hello GeeksforGeeks</p>
+    <p><del>Hello GeeksforGeeks</del></p>
+    <br>
+    <p>Hello GeeksforGeeks</p>
+    <p><u>Hello GeeksforGeeks</u></p>
+</body>
+</html>
