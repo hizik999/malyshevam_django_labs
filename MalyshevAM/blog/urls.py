@@ -12,4 +12,5 @@ urlpatterns = [
     path('praktikum4_3/', praktikum4_3),
     path('praktikum4_4/', praktikum4_4),
     path('praktikum5/', praktikum5),
+    path('blog/', blog_index),
 ]
