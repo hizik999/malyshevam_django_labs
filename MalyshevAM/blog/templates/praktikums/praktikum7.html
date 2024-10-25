@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Задание с псевдоклассами</title>
+    <title>Практикум 7. Задание с псевдоклассами</title>
     <style>
         .task1 p::first-letter {
             color: red;
@@ -61,6 +61,91 @@
             font-size: 16px;
             font-weight: bold;
         }
+
+        .task6 p::before {
+            content: "Начало: "; 
+            font-weight: bold;
+        }
+
+        .task6 p::after {
+            content: " :Конец"; 
+            font-weight: bold;
+        }
+
+        .task6 p,
+        .task7 p,
+        .task8 p {
+            margin-bottom: 20px;
+        }
+
+        .task7 p::before {
+            content: "Начало: "; 
+            font-weight: bold;
+            color: green;
+        }
+
+        .task7 p::after {
+            content: " :Конец"; 
+            font-weight: bold;
+            color: red;
+        }
+
+        body {
+            counter-reset: paragraph-counter; 
+        }
+
+        p::before {
+            counter-increment: paragraph-counter; 
+            content: "Абзац — " counter(paragraph-counter) ". "; 
+            font-weight: bold;
+        }
+
+        .task8 {
+            counter-reset: paragraph-counter; 
+        }
+
+        .task8 p::before {
+            counter-increment: paragraph-counter; 
+            content: "Абзац — " counter(paragraph-counter) ". "; 
+            font-weight: bold;
+        }
+
+        .task9 {
+            counter-reset: paragraph-counter; 
+        }
+
+        .task9 p::before {
+            counter-increment: paragraph-counter; 
+            content: "Абзац — " counter(paragraph-counter) ". ";
+            color: green;
+        }
+
+        .reset-counter {
+            counter-reset: paragraph-counter;
+            color: red;
+            font-weight: bold;
+        }
+
+        .reset-counter + p::before {
+            counter-increment: paragraph-counter; 
+            content: "Абзац — " counter(paragraph-counter) ". ";
+            color: green;
+        }
+
+        ul:first-of-type li:nth-child(odd) {
+            color: red;
+        }
+        ul:first-of-type li:nth-child(even) {
+            color: yellow;
+        }
+
+        ul:nth-of-type(2) li:nth-child(odd) {
+            color: blue;
+        }
+        ul:nth-of-type(2) li:nth-child(even) {
+            color: green;
+        }
+
     </style>
 </head>
 <body>
@@ -106,6 +191,67 @@
         <input type="text" class="task5 grid-item" placeholder="Введите пароль" required>
 
     </div>
+
+    <h1>Задание 6. Реализуйте псевдокласс, который вставляет в начало абзаца слово "Начало.", в конце абзаца слово "Конец!"</h1>
+    <div class="task6">
+        <p>Django Rest Framework (DRF) — это библиотека, которая работает со стандартными моделями Django для создания гибкого и мощного API для проекта.</p>
+        <p>Django CMS - это современная платформа для веб-публикаций, построенная на Django, фреймворке веб-приложений «для перфекционистов с соблюдением сроков».</p>
+        <p>ASGI (Asynchronous Server Gateway Interface) является духовным наследником WSGI, предназначенным для обеспечения стандартного интерфейса между асинхронными веб-серверами, платформами и приложениями Python.</p>
+        <p>Python Social Auth - это простой в настройке механизм социальной аутентификации/регистрации с поддержкой нескольких платформ и провайдеров аутентификации.</p>
+        <p>Django Crispy Forms. Лучший способ получить Django DRY формы. Создавайте программные макеты многоразового использования из компонентов, имея полный контроль над отображаемым HTML без записи HTML в шаблонах.</p>
+    </div>
+    
+    <h1>Задание 7. Реализуйте псевдокласс, который подсвечивает слова "Начало: " и " :Конец" разными цветами</h1>
+    <div class="task7">
+        <p>Django Rest Framework (DRF) — это библиотека, которая работает со стандартными моделями Django для создания гибкого и мощного API для проекта.</p>
+        <p>Django CMS - это современная платформа для веб-публикаций, построенная на Django, фреймворке веб-приложений «для перфекционистов с соблюдением сроков».</p>
+        <p>ASGI (Asynchronous Server Gateway Interface) является духовным наследником WSGI, предназначенным для обеспечения стандартного интерфейса между асинхронными веб-серверами, платформами и приложениями Python.</p>
+        <p>Python Social Auth - это простой в настройке механизм социальной аутентификации/регистрации с поддержкой нескольких платформ и провайдеров аутентификации.</p>
+        <p>Django Crispy Forms. Лучший способ получить Django DRY формы. Создавайте программные макеты многоразового использования из компонентов, имея полный контроль над отображаемым HTML без записи HTML в шаблонах.</p>
+    </div>
+
+    <h1>Задание 8. Реализуйте псевдокласс, который вычисляет номер абзаца HTML тег P</h1>
+    <div class="task8">
+        <p>Django Rest Framework (DRF) — это библиотека, которая работает со стандартными моделями Django для создания гибкого и мощного API для проекта.</p>
+        <p>Django CMS - это современная платформа для веб-публикаций, построенная на Django, фреймворке веб-приложений «для перфекционистов с соблюдением сроков».</p>
+        <p>ASGI (Asynchronous Server Gateway Interface) является духовным наследником WSGI, предназначенным для обеспечения стандартного интерфейса между асинхронными веб-серверами, платформами и приложениями Python.</p>
+        <p>Python Social Auth - это простой в настройке механизм социальной аутентификации/регистрации с поддержкой нескольких платформ и провайдеров аутентификации.</p>
+    </div>
+
+    <h1>Задание 9. Реализуйте псевдокласс, который вычисляет номер абзаца HTML тег P до номера 4 и потом сбрасывает счет</h1>
+    <div class="task9">
+        <p>Быть энтузиасткой сделалось ее общественным положением, и иногда, когда ей даже того не хотелось, она, чтобы не обмануть ожиданий людей, знавших ее, делалась энтузиасткой.</p>
+        <p>В середине разговора про политические действия Анна Павловна разгорячилась.</p>
+        <p>Ах, не говорите мне про Австрию! Я ничего не понимаю, может быть, но Австрия никогда не хотела и не хочет войны. Она предает нас. Россия одна должна быть спасительницей Европы. Наш благодетель знает свое высокое призвание и будет верен ему. Вот одно, во что я верю.</p>
+        <p>Я думаю, — сказал князь улыбаясь, — что ежели бы вас послали вместо нашего милого Винценгероде, вы бы взяли приступом согласие прусского короля. Вы так красноречивы. Вы дадите мне чаю?</p>
+        <p class="reset-counter">Абзац сброса - после него нумерация начнется сначала.</p>
+        <p>Ах, не говорите мне про Австрию! Я ничего не понимаю, может быть, но Австрия никогда не хотела и не хочет войны. Она предает нас. Россия одна должна быть спасительницей Европы. Наш благодетель знает свое высокое призвание и будет верен ему. Вот одно, во что я верю.</p>
+        <p>Я думаю, — сказал князь улыбаясь, — что ежели бы вас послали вместо нашего милого Винценгероде, вы бы взяли приступом согласие прусского короля. Вы так красноречивы. Вы дадите мне чаю?</p>
+    </div>
+
+    <h1>Задание 10. Реализуйте псевдокласс, который подсвечивает разными цветами чётные и нечётные пункты списка. Цвет должен быть различен в разных списках</h1>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+    </ul>
+    <ul>
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+        <li>D</li>
+        <li>E</li>
+        <li>F</li>
+        <li>G</li>
+        <li>H</li>
+        <li>I</li>
+    </ul>
 </body>
 <script>
     function getRandomColor() {
@@ -141,103 +287,3 @@
     });
 </script>
 </html>
-
-
-<!-- 
-
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Задание с псевдоклассами</title>
-    <style>
-        .task1 p::first-letter {
-            color: red;
-            font-size: 2em;
-            font-weight: bold;
-        }
-
-        .task2 p::first-line {
-            color: red;
-            font-style: italic;
-        }
-
-        .highlight {
-            background-color: green;
-            color: red;
-            font-weight: bold;
-        }
-        
-        input {
-            padding: 10px;
-            border: 10px solid #ccc;
-            font-size: 16px;
-        }
-
-        input:focus {
-            color: white;
-            border-color: black;
-        }
-
-        input:valid {
-            background-color: white;
-            color: black;
-        }
-    </style>
-</head>
-<body>
-    <h1>Задание 1. Реализуйте псевдокласс, который подсвечивает первую букву слова</h1>
-    <div class="task1">
-        <p>Django (Джанго) — свободный фреймворк для веб-приложений на языке Python, использующий шаблон проектирования MVC. Документация на русском языке.</p>
-        <p>Рецепты Django ORM - это книга о работе с моделями Django ORM и Django. Django ORM является одним из ключевых столпов Django.</p>
-        <p>SQLAlchemy — это набор инструментов Python SQL и Object Relational Mapper, который дает разработчикам приложений всю мощь и гибкость SQL.</p>
-        <p>Channels - это проект, который использует Django и расширяет его возможности за пределы HTTP - для обработки WebSockets, протоколов чата, IoT-протоколов и много другого.</p>
-    </div>
-
-    <h1>Задание 2. Реализуйте псевдокласс, который подсвечивает строку абзаца</h1>
-    <div class="task2">
-        <p>Django (Джанго) — свободный фреймворк для веб-приложений на языке Python, использующий шаблон проектирования MVC. Документация на русском языке.</p>
-        <p>Рецепты Django ORM - это книга о работе с моделями Django ORM и Django. Django ORM является одним из ключевых столпов Django.</p>
-        <p>SQLAlchemy — это набор инструментов Python SQL и Object Relational Mapper, который дает разработчикам приложений всю мощь и гибкость SQL.</p>
-        <p>Channels - это проект, который использует Django и расширяет его возможности за пределы HTTP - для обработки WebSockets, протоколов чата, IoT-протоколов и много другого.</p>
-    </div>
-
-    <h1>Задание 3. Реализуйте псевдокласс, который подсвечивает выделенные слова цветом фона и цветом текста</h1>
-    <div class="task3">
-        <p><span class="highlight">Django (Джанго) — свободный фреймворк для веб-приложений на языке Python, использующий шаблон проектирования MVC. Документация на русском языке.</span></p>
-        <p><span class="highlight">Рецепты Django ORM -</span> это книга о работе с моделями Django ORM и Django. Django ORM является одним из ключевых столпов Django.</p>
-        <p>SQLAlchemy — это набор инструментов Python SQL и Object Relational Mapper, который дает разработчикам приложений всю мощь и гибкость SQL.</p>
-        <p>Channels - это проект, который использует Django и расширяет его возможности за пределы HTTP - для обработки WebSockets, протоколов чата, IoT-протоколов и много другого.</p>
-    </div>
-
-    <h1>Задание 4. Реализуйте псевдокласс, который подсвечивает поля ввода разными цветами, а когда вводится текст, цвета исчезают</h1>
-    <div class="task4">
-        <input type="text" placeholder="Введите пароль" required>
-    </div>
-</body>
-<script>
-    function getRandomColor() {
-        const letters = '0123456789ABCDEF';
-        let color = '#';
-        for (let i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
-    }
-    const inputs = document.querySelectorAll('input');
-    inputs.forEach(input => {
-        input.addEventListener('input', function() {
-            this.style.backgroundColor = getRandomColor();
-            this.style.color = getRandomColor();
-            this.style.borderColor = getRandomColor();
-        });
-        input.addEventListener('click', function() {
-                this.style.backgroundColor = 'white';
-                this.style.color = 'black';
-                this.style.borderColor = 'black';
-            });
-    });
-</script>
-</html>
- -->
