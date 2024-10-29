@@ -36,3 +36,6 @@ def blog_index(request):
 
 def praktikum7(request):
     return render(request, 'praktikums/praktikum7.html')
+
+def praktikum8(request):
+    return render(request, 'praktikums/praktikum8.html')

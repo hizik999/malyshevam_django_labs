@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Практикум 8. Формы</title>
+    <style>
+        .survey-form-section {
+            background-color: #f9f9f9;
+            width: 600px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-family: Arial, sans-serif;
+        }
+        .survey-form-section h2 {
+            text-align: center;
+            font-size: 24px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .survey-form-section .input-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .survey-form-section .input-group {
+            position: relative;
+            flex: 1;
+        }
+        .survey-form-section .input-group input {
+            width: 100%;
+            padding: 10px 10px 10px 40px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #555;
+            box-sizing: border-box;
+        }
+        .survey-form-section .input-group .icon {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: #555;
+        }
+        .survey-form-section .rating-group {
+            background-color: #e6e6e6;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .survey-form-section .rating-group label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+        .survey-form-section .rating-group input[type="radio"] {
+            margin-right: 8px;
+            accent-color: #4caf50; /* Зелёный цвет для радиокнопок */
+        }
+        .survey-form-section .textarea-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #555;
+            box-sizing: border-box;
+            resize: none;
+            height: 80px;
+        }
+        .survey-form-section .submit-btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #4caf50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .survey-form-section .submit-btn:hover {
+            background-color: #45a049;
+        }
+        .registration-form {
+            background-color: #f9f9f9;
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .registration-form {
+            background-color: #f9f9f9;
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            box-sizing: border-box; /* Учитывает границы и padding */
+        }
+        .registration-form input,
+        .registration-form button {
+            box-sizing: border-box; /* Учитывает границы и padding */
+        }
+        .toggle-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .toggle-group label {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #555;
+        }
+        .toggle-group input[type="radio"] {
+            display: none;
+        }
+        .toggle-group label span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: #4caf50;
+            color: #fff;
+            margin-right: 5px;
+        }
+        .input-group {
+            position: relative;
+            margin-bottom: 10px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px 10px 10px 40px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+        .input-group .icon {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: #f44336;
+        }
+        .gender-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .gender-group label {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #555;
+        }
+        .gender-group label span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: #4caf50;
+            color: #fff;
+            margin-right: 5px;
+        }
+        .terms {
+            font-size: 12px;
+            color: #999;
+            margin: 10px 0;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+        .order-form {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .order-form h2 {
+            text-align: center;
+        }
+        .order-form label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        .order-form select,
+        .order-form input[type="text"],
+        .order-form input[type="tel"],
+        .order-form input[type="date"],
+        .order-form input[type="time"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .order-form .contact-info {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .order-form .radio-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .order-form .radio-group label {
+            font-weight: normal;
+        }
+        .order-form .checkbox-item {
+            display: flex;
+            align-content: center;
+            margin-bottom: 5px;
+        }
+        .order-form .checkbox-item input[type="checkbox"] {
+            margin: 0;
+            vertical-align: middle;
+        }
+        .order-form .checkbox-item label {
+            margin-left: 8px;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            font-weight: normal;
+        }
+        .order-form button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .order-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Задание 1</h1>
+    <form>
+        <label for="username">Логин:</label><br>
+        <input type="text" id="username" name="username" value="Юрий"><br><br>
+        
+        <label for="password">Пароль:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        
+        <input type="checkbox" id="remember" name="remember">
+        <label for="remember">Запомнить</label><br><br>
+        
+        <input type="submit" value="Вход">
+    </form>
+    <h1>Задание 2</h1>
+    <form>
+        <input type="text" name="name" placeholder="Введите имя"><br><br>
+        
+        <input type="email" name="email" placeholder="Почта"><br><br>
+        
+        <textarea name="comment" rows="5" cols="40" placeholder="Введите ваш комментарий"></textarea><br><br>
+        
+        <input type="submit" value="Отправить комментарий">
+    </form>
+    <h1>Задание 3</h1>
+    <form style="display: flex; gap: 10px;">
+        <div>
+            <select multiple size="3">
+                <option value="АС ЭТРАН">АС ЭТРАН</option>
+                <option value="ЕАСАПР">ЕАСАПР</option>
+                <option value="АСУФР">АСУФР</option>
+            </select>
+        </div>
+
+        <div>
+            <select>
+                <option value="ЕАСАПР">ЕАСАПР</option>
+                <option value="ЕАСД">ЕАСД</option>
+                <option value="АСУМР">АСУМР</option>
+                <option value="АСУСТ">АСУСТ</option>
+            </select>
+        </div>
+    </form>
+    <h1>Задание 4</h1>
+    <form>
+        <legend>Тип ПО:</legend>
+        <input type="radio" id="as" name="software_type" value="АС" checked>
+        <label for="as">АС</label><br>
+        <input type="radio" id="arm" name="software_type" value="АРМ">
+        <label for="arm">АРМ</label><br>
+
+        <legend>Прикрепить файл:</legend>
+        <input type="file" name="attachment"><br><br>
+
+        <legend>Выберите параметры:</legend>
+        <input type="checkbox" id="asu_to" name="options" value="АСУ ТО">
+        <label for="asu_to">АСУ ТО</label><br>
+        <input type="checkbox" id="arm_ppd" name="options" value="АРМ ППД">
+        <label for="arm_ppd">АРМ ППД</label><br>
+        <input type="checkbox" id="as_spf" name="options" value="АС СПФ">
+        <label for="as_spf">АС СПФ</label><br>
+        <input type="checkbox" id="asov" name="options" value="АСОВ">
+        <label for="asov">АСОВ</label><br><br>
+        
+        <button type="submit">OK</button>
+        <button type="reset">Сбросить</button>
+    </form>
+    <h1>Задание 5</h1>
+        <fieldset>
+            <legend>О системе:</legend>
+            <input type="radio" id="ac" name="system" value="АС" checked>
+            <label for="ac">АС</label><br>
+
+            <input type="radio" id="arm" name="system" value="АРМ">
+            <label for="arm">АРМ</label><br><br>
+
+            <label for="short-name">Краткое наименование</label><br>
+            <input type="text" id="short-name" name="short-name"><br><br>
+
+            <label for="category">Категория</label><br>
+            <input type="text" id="category" name="category"><br><br>
+
+            <label for="customer">Заказчик</label><br>
+            <input type="text" id="customer" name="customer"><br><br>
+
+            <label for="developer">Разработчик</label><br>
+            <input type="text" id="developer" name="developer"><br><br>
+
+            <button type="submit">Сохранить</button>
+        </fieldset>
+
+        <fieldset>
+            <legend>Работа со временем</legend>
+            <input type="checkbox" id="punctuality-creation">
+            <label for="punctuality-creation">создание пунктуальности (никогда не будете никуда опаздывать);</label><br>
+
+            <input type="checkbox" id="punctuality-extraction">
+            <label for="punctuality-extraction">извлечение от пунктуальности (никогда никуда не будете торопиться);</label><br>
+
+            <input type="checkbox" id="time-perception">
+            <label for="time-perception">изменение восприятия времени и часов.</label><br><br>
+
+            <button type="submit">Отправить</button>
+        </fieldset>
+    </form>
+
+    <h1>Задание 6</h1>
+        <form class="order-form">
+            <label for="site-type">Тип сайта:</label>
+            <select id="site-type" name="site-type">
+                <option value="internet-store-forum">Интернет магазин + Форум</option>
+                <option value="blog">Блог</option>
+                <option value="corporate">Корпоративный сайт</option>
+            </select>
+        
+            <label>Уровень специалиста:</label>
+            <div class="radio-group">
+                <input type="radio" id="junior" name="specialist-level" value="junior">
+                <label for="junior">Junior</label>
+        
+                <input type="radio" id="middle" name="specialist-level" value="middle" checked>
+                <label for="middle">Middle</label>
+        
+                <input type="radio" id="senior" name="specialist-level" value="senior">
+                <label for="senior">Senior</label>
+            </div>
+        
+            <label>Дополнительные услуги:</label>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="seo" name="additional-service" value="seo">
+                    <label for="seo">Поисковая оптимизация</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="page-optimization" name="additional-service" value="page-optimization">
+                    <label for="page-optimization">Постраничная оптимизация</label>
+                </div>
+            </div>
+        
+            <label>Дата и время встречи с разработчиком:</label>
+            <input type="date" name="meeting-date">
+            <input type="time" name="meeting-time">
+        
+            <fieldset class="contact-info">
+                <legend>Контактная информация</legend>
+        
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" placeholder="введите ваше имя">
+        
+                <label for="phone">Ваш телефон:</label>
+                <input type="tel" id="phone" name="phone" placeholder="например, +7 800 123-45-67">
+            </fieldset>
+        
+            <button type="submit">Записаться</button>
+    </form>
+    <h1>Задание 7</h1>
+        <div class="registration-form">
+            <h2>Регистрация</h2>
+            <div class="toggle-group">
+                <label>
+                    <input type="radio" name="account_type" checked>
+                    <span>✔</span> Физ.лицо
+                </label>
+                <label>
+                    <input type="radio" name="account_type">
+                    <span>✔</span> Компания
+                </label>
+            </div>
+            <div class="input-group">
+                <span class="icon">📧</span>
+                <input type="email" placeholder="Почта">
+            </div>
+            <div class="input-group">
+                <span class="icon">👤</span>
+                <input type="text" placeholder="Имя">
+            </div>
+            <div class="input-group">
+                <span class="icon">🔒</span>
+                <input type="password" placeholder="Пароль">
+            </div>
+            <div class="gender-group">
+                <label>
+                    <input type="radio" name="gender" checked>
+                    <span>✔</span> М
+                </label>
+                <label>
+                    <input type="radio" name="gender">
+                    <span>✔</span> Ж
+                </label>
+            </div>
+            <p class="terms">Отправляя, вы соглашаетесь с правилами на django.fun.</p>
+            <button type="submit" class="submit-btn">Отправить</button>
+        </div>
+    <h1>Задание 8</h1>
+    <div class="survey-form-section">
+        <h2>Форма опроса</h2>
+        <div class="input-row">
+            <div class="input-group">
+                <span class="icon">👤</span>
+                <input type="text" placeholder="Имя">
+            </div>
+            <div class="input-group">
+                <span class="icon">📧</span>
+                <input type="email" placeholder="Почта">
+            </div>
+        </div>
+        <div class="input-row">
+            <div class="input-group">
+                <span class="icon">📅</span>
+                <input type="text" placeholder="Возраст">
+            </div>
+            <div class="input-group">
+                <span class="icon">📞</span>
+                <input type="tel" placeholder="Телефон">
+            </div>
+        </div>
+        <div class="rating-group">
+            <p>Оцените сайт</p>
+            <label><input type="radio" name="rating" value="superb"> Суперотлично</label>
+            <label><input type="radio" name="rating" value="excellent"> Отлично</label>
+            <label><input type="radio" name="rating" value="good"> Хорошо</label>
+            <label><input type="radio" name="rating" value="satisfactory"> Удовлетворительно</label>
+            <label><input type="radio" name="rating" value="poor"> Неудовлетворительно</label>
+        </div>
+        <div class="textarea-group">
+            <textarea placeholder="Пожалуйста, оставьте комментарий к вашему рейтингу"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Отправить оценку</button>
+    </div>
+    
+</body>
+</html>
