@@ -42,3 +42,12 @@ def praktikum8(request):
 
 def praktikum9_1(request):
     return render(request, 'praktikums/praktikum9_1.html')
+
+def praktikum9_2(request):
+    return render(request, 'praktikums/praktikum9_2.html')
+
+def praktikum9_3(request):
+    return render(request, 'praktikums/praktikum9_3.html')
+
+def praktikum9_4(request):
+    return render(request, 'praktikums/praktikum9_4.html')

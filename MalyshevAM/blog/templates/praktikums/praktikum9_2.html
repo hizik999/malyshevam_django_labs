@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блочная верстка</title>
+    <style>
+        /* Общий стиль для всех блоков */
+        .container {
+            width: 750px;
+            margin: 0; /* Убираем центрирование */
+        }
+        .header {
+            background-color: #8B0000;
+            color: white;
+            text-align: left;
+            padding: 20px;
+            font-weight: bold;
+        }
+        .menu-content {
+            display: flex;
+        }
+        .menu {
+            background-color: #008080;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 150px;
+            font-weight: bold;
+        }
+        .content {
+            background-color: #D3D3D3;
+            color: black;
+            text-align: center;
+            padding: 20px;
+            flex-grow: 1;
+            font-weight: bold;
+        }
+        .footer {
+            background-color: #4B4B4B;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">верхняя панель</div>
+    <div class="menu-content">
+        <div class="menu">МЕНЮ</div>
+        <div class="content">КОНТЕНТ</div>
+    </div>
+    <div class="footer">нижняя панель</div>
+</div>
+
+</body>
+</html>

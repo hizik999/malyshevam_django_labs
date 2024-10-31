@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивная блочная верстка</title>
+    <style>
+        .container {
+            width: 100%;
+            margin: 0;
+        }
+        .header {
+            background-color: #8B0000;
+            color: white;
+            text-align: left;
+            padding: 20px;
+            font-weight: bold;
+            box-sizing: border-box;
+        }
+        .menu-content {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .menu {
+            background-color: #008080;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-weight: bold;
+            width: 30%;
+            box-sizing: border-box;
+        }
+        .content {
+            background-color: #D3D3D3;
+            color: black;
+            text-align: center;
+            padding: 20px;
+            font-weight: bold;
+            width: 70%;
+            box-sizing: border-box;
+        }
+        .footer {
+            background-color: #4B4B4B;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-weight: bold;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">верхняя панель</div>
+    <div class="menu-content">
+        <div class="menu">МЕНЮ</div>
+        <div class="content">КОНТЕНТ</div>
+    </div>
+    <div class="footer">нижняя панель</div>
+</div>
+
+</body>
+</html>
