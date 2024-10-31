@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Табличная верстка</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td, th {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .header {
+            background-color: red;
+            text-align: center;
+            color: black;
+            font-weight: bold;
+        }
+        .navigation {
+            background-color: green;
+            width: 20%;
+            color: black;
+            font-weight: bold;
+            text-align: center;
+            vertical-align: top;
+        }
+        .links {
+            background-color: white;
+            width: 20%;
+            vertical-align: top;
+        }
+        .content {
+            background-color: white;
+            text-align: left;
+        }
+        .footer {
+            background-color: yellow;
+            text-align: center;
+            font-weight: bold;
+        }
+        .title {
+            background-color: blue;
+            text-align: center;
+            color: black;
+            font-weight: bold;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <tr>
+        <td colspan="2" class="header">Шапка сайта (логотип, слоган, телефон)</td>
+    </tr>
+    <tr>
+        <td class="navigation">Навигация</td>
+        <td class="title">Заголовок</td>
+    </tr>
+    <tr>
+        <td class="links">
+            <ul>
+                <li><a href="#">Ссылка 1</a></li>
+                <li><a href="#">Ссылка 2</a></li>
+                <li><a href="#">Ссылка 3</a></li>
+            </ul>
+        </td>
+        <td class="content">Контент</td>
+    </tr>
+    <tr>
+        <td colspan="2" class="footer">Низ сайта (баннеры, счетчики, информация)</td>
+    </tr>
+</table>
+
+</body>
+</html>

@@ -15,4 +15,5 @@ urlpatterns = [
     path('praktikum6/', blog_index),
     path('praktikum7/', praktikum7),
     path('praktikum8/', praktikum8),
+    path('praktikum9/', praktikum9_1),
 ]
