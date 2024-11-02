@@ -58,7 +58,7 @@
         }
         .survey-form-section .rating-group input[type="radio"] {
             margin-right: 8px;
-            accent-color: #4caf50; /* Зелёный цвет для радиокнопок */
+            accent-color: #4caf50;
         }
         .survey-form-section .textarea-group textarea {
             width: 100%;
@@ -100,11 +100,11 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
-            box-sizing: border-box; /* Учитывает границы и padding */
+            box-sizing: border-box;
         }
         .registration-form input,
         .registration-form button {
-            box-sizing: border-box; /* Учитывает границы и padding */
+            box-sizing: border-box;
         }
         .toggle-group {
             display: flex;
@@ -424,7 +424,7 @@
             <button type="submit">Записаться</button>
     </form>
     <h1>Задание 7</h1>
-        <div class="registration-form">
+        <form class="registration-form">
             <h2>Регистрация</h2>
             <div class="toggle-group">
                 <label>
@@ -460,9 +460,9 @@
             </div>
             <p class="terms">Отправляя, вы соглашаетесь с правилами на django.fun.</p>
             <button type="submit" class="submit-btn">Отправить</button>
-        </div>
+        </form>
     <h1>Задание 8</h1>
-    <div class="survey-form-section">
+    <form class="survey-form-section">
         <h2>Форма опроса</h2>
         <div class="input-row">
             <div class="input-group">
@@ -496,7 +496,7 @@
             <textarea placeholder="Пожалуйста, оставьте комментарий к вашему рейтингу"></textarea>
         </div>
         <button type="submit" class="submit-btn">Отправить оценку</button>
-    </div>
+    </form>
     
 </body>
 </html>
