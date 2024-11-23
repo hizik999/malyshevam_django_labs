@@ -21,7 +21,6 @@ urlpatterns = [
     path('praktikum9_4/', praktikum9_4),
 
     ### Blog
-    path('blog/', blog_index),
-    path('', blog_index, name='home'),
+    path('blog/', blog_index, name='home'),
     path('category/<slug:slug>', blog_category, name='category'),
 ]
