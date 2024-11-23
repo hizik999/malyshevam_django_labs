@@ -51,3 +51,6 @@ def praktikum9_3(request):
 
 def praktikum9_4(request):
     return render(request, 'praktikums/praktikum9_4.html')
+
+def blog_category(request, slug):
+    return render(request, 'blog/category.html')
