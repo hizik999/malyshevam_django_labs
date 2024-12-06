@@ -2,6 +2,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+{% block title %} {{ title }} :: {{ block.super }} {% endblock %}
 <section class="bg-text-area">
     <div class="container">
         <div class="row">
@@ -33,86 +34,23 @@
                             </div>
                         </div>
                     </div>
+                    {% for post in posts %}
                     <div class="col-md-3">
                         <div class="single-post">
-                            <img src="{% static 'img/post-image2.jpg' %}" alt="">
-                            <h3><a href="#">Post Title Goes Here.</a></h3>
-                            <h4><span>Posted By: <span class="author-name">Kabbo Liate</span></span>
+                            {% if post.photo %}
+                            <img src="{{ post.photo.url }}" alt="{{ post.title }}">
+                            {% else %}
+                            <img src="" alt="{{ post.title }}">
+                            {% endif %}
+
+                            <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}.</a></h3>
+                            <h4><span>Posted By: <span class="author-name">{{ post.author }} </span></span>
                             </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed dotempor incididunt ut. labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                            {{ post.content|truncatewords_html:20|safe }}
                             <h4><span>25 February 2017</span></h4>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="single-post">
-                            <img src="{% static 'img/post-image3.jpg' %}" alt="">
-                            <h3><a href="#">Post Title Goes Here.</a></h3>
-                            <h4><span>Posted By: <span class="author-name">Kabbo Liate</span></span>
-                            </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed dotempor incididunt ut. labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                            <h4><span>25 February 2017</span></h4>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="single-post">
-                            <img src="{% static 'img/post-image4.jpg' %}" alt="">
-                            <h3><a href="#">Post Title Goes Here.</a></h3>
-                            <h4><span>Posted By: <span class="author-name">Kabbo Liate</span></span>
-                            </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed dotempor incididunt ut. labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                            <h4><span>25 February 2017</span></h4>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="single-post">
-                            <img src="{% static 'img/post-image5.jpg' %}" alt="">
-                            <h3><a href="#">Post Title Goes Here.</a></h3>
-                            <h4><span>Posted By: <span class="author-name">Kabbo Liate</span></span>
-                            </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed dotempor incididunt ut. labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                            <h4><span>25 February 2017</span></h4>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="single-post">
-                            <img src="{% static 'img/post-image6.jpg' %}" alt="">
-                            <h3><a href="#">Post Title Goes Here.</a></h3>
-                            <h4><span>Posted By: <span class="author-name">Kabbo Liate</span></span>
-                            </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed dotempor incididunt ut. labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                            <h4><span>25 February 2017</span></h4>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="single-post">
-                            <img src="{% static 'img/post-image7.jpg' %}" alt="">
-                            <h3><a href="#">Post Title Goes Here.</a></h3>
-                            <h4><span>Posted By: <span class="author-name">Kabbo Liate</span></span>
-                            </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed dotempor incididunt ut. labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                            <h4><span>25 February 2017</span></h4>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="single-post">
-                            <img src="{% static 'img/post-image8.jpg' %}" alt="">
-                            <h3><a href="#">Post Title Goes Here.</a></h3>
-                            <h4><span>Posted By: <span class="author-name">Kabbo Liate</span></span>
-                            </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed dotempor incididunt ut. labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                            <h4><span>25 February 2017</span></h4>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="single-post">
-                            <img src="{% static 'img/post-image9.jpg' %}" alt="">
-                            <h3><a href="#">Post Title Goes Here.</a></h3>
-                            <h4><span>Posted By: <span class="author-name">Kabbo Liate</span></span>
-                            </h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed dotempor incididunt ut. labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                            <h4><span>25 February 2017</span></h4>
-                        </div>
-                    </div>
+                    {% endfor %}
             </div>
         </div>
     </div>

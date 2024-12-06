@@ -1,4 +1,18 @@
 from django.shortcuts import render
+from django.views.generic import ListView
+from .models import Post
+
+
+class Home(ListView):
+    template_name = 'blog/index.html'
+    model = Post
+    context_object_name = 'posts'
+    paginate_by = 4
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Главная страница/Classic Blog Design'
+        return context
 
 # Create your views here.
 def index(request):
@@ -54,3 +68,6 @@ def praktikum9_4(request):
 
 def blog_category(request, slug):
     return render(request, 'blog/category.html')
+
+def blog_post(request, slug):
+    return render(request, 'blog/post.html')
