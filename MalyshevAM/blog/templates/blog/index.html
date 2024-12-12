@@ -54,8 +54,29 @@
             </div>
         </div>
     </div>
-    <div class="pegination">
-        <!--
+    {% if page_obj.has_other_pages %}
+        <div class="pegination">
+            <div class="nav-links">
+                {% for p in page_obj.paginator.page_range %}
+                    {% if page_obj.numver == p %}
+                        <span class="page-numbers current">{{ p }}</span>
+                    {% elif p > page_obj.number|add:-3 and p < page_obj.number|add:3 %}
+                        <a class="page-numbers" href="?page={{ p }}">{{ p }}</a>
+                    {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                <a class="page-numbers" href="?page={{ page_obj.next_page_number }}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+</section>
+{% endblock %}
+
+
+
+<!--
         <ul>
             <li><i class="fa fa-angle-left" aria-hidden="true"></i></li>
             <li class="active">1</li>
@@ -64,15 +85,3 @@
             <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
         </ul>
 -->
-
-        <div class="nav-links">
-            <span class="page-numbers current">1</span>
-            <a class="page-numbers" href="#">2</a>
-            <a class="page-numbers" href="#">3</a>
-            <a class="page-numbers" href="#">4</a>
-            <a class="page-numbers" href="#">5</a>
-            <a class="page-numbers" href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-        </div>
-    </div>
-</section>
-{% endblock %}
