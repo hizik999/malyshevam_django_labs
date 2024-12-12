@@ -23,6 +23,7 @@ urlpatterns = [
     ### Blog
     #path('', Home.as_view(), name='home'),
     path('blog/', Home.as_view(), name='home'),
-    path('category/<slug:slug>', blog_category, name='category'),
-    path('post/<slug:slug>', blog_post, name='post'),
+    path('category/<slug:slug>', PostsByCategory.as_view(), name='category'),
+    path('post/<slug:slug>', GetPost.as_view(), name='post'),
+    path('tag/<str:slug>/', PostsByTag.as_view(), name='tag'),
 ]

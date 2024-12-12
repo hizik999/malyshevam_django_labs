@@ -1,0 +1,214 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {{ title }} :: {{ block.super }} {% endblock %}
+
+{% block content %}
+<section class="single-blog-area">
+    <div class="container">
+        <div class="row">
+           <div class="col-md-12">
+            <div class="border-top">
+                <div class="col-md-8">
+                <div class="blog-area">
+                    <div class="blog-area-part">
+                        <h2>{{ post.title }}</h2>
+                        <div class="single-content">
+                            <div> <span> Категория: <a href="{{ post.category.get_absolute_rul }}"> 
+                                {{ post.category }}
+                            </a></span>
+                            <br>
+                                {% if post.tags.exists %}
+                                <span>
+                                    Теги:
+                                    {% for tag in post.tags.all %}
+                                    <a href="{{ tag.get_absolute_url }}"> {{ tag.title }} </a>
+                                    {% endfor %}
+                                </span>
+                            <br>
+                                {% endif %}
+                                <span> Просмотров {{ post.views }}</span>
+                            </div>
+                            {{ post.content|safe }}
+                        </div>
+                    </div>
+                    <div class="commententries">
+                        <h3>Comments</h3>
+
+                        <ul class="commentlist">
+                            <li>
+                                <article class="comment">
+                                    <header class="comment-author">
+                                        <img src="img/author-1.jpg" alt="">
+                                    </header>
+                                    <section class="comment-details">
+                                        <div class="author-name">
+                                            <h5><a href="#">Selina Gomez</a></h5>
+                                            <p>February 25 2017</p>
+                                        </div>
+                                        <div class="comment-body">
+                                            <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
+                                        </div>
+                                        <div class="reply">
+                                            <p><span><a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i></a>12</span><span><a href="#"><i class="fa fa-reply" aria-hidden="true"></i></a>7</span></p>
+                                        </div>
+                                    </section>
+                                </article>
+
+                                <ul class="children">
+                                    <li>
+                                        <article class="comment">
+                                            <header class="comment-author">
+                                                <img src="img/author-2.jpg" alt="">
+                                            </header>
+                                            <section class="comment-details">
+                                                <div class="author-name">
+                                                    <h5><a href="#">Khalid Hasan Zibon</a></h5>
+                                                    <p>February 25 2017</p>
+                                                </div>
+                                                <div class="comment-body">
+                                                    <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
+                                                </div>
+                                                <div class="reply">
+                                                    <p><span><a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i></a>12</span><span><a href="#"><i class="fa fa-reply" aria-hidden="true"></i></a>7</span></p>
+                                                </div>
+                                            </section>
+                                        </article>
+                                    </li>
+                                </ul>
+
+                            </li>
+                            <li>
+                                <article class="comment">
+                                    <header class="comment-author">
+                                        <img src="img/author-3.jpg" alt="">
+                                    </header>
+                                    <section class="comment-details">
+                                        <div class="author-name">
+                                            <h5><a href="#">Heath Ledger</a></h5>
+                                            <p>February 25 2017</p>
+                                        </div>
+                                        <div class="comment-body">
+                                            <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
+                                        </div>
+                                        <div class="reply">
+                                            <p><span><a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i></a>12</span><span><a href="#"><i class="fa fa-reply" aria-hidden="true"></i></a>7</span></p>
+                                        </div>
+                                    </section>
+                                </article>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <form action="#" method="get">
+                        <div class="name">
+                            <input type="text" name="" id="" placeholder="Name" class="name">
+                        </div>
+                        <div class="email">
+                            <input type="email" name="" id="" placeholder="Email" class="email">
+                        </div>
+                        <div class="comment">
+                            <input type="text" name="" id="" placeholder="Comment" class="comment">
+                        </div>
+                        <div class="post">
+                            <input type="submit" value="Post">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="button-group filters-button-group">
+                    <button data-filter=".recent" class="button is-checked">Recent</button>
+                    <button data-filter=".popular" class="button">popular</button>
+                    <button data-filter=".users" class="button">Users</button>
+                </div>
+
+                <div class="grid" style="position: relative; height: 1221.93px;">
+                    <div class="portfolio-item recent" style="position: absolute; left: 0px; top: 0px;">
+                        <img src="img/portfolio1.jpg" alt="">
+                        <div class="portfolio-text">
+                            <h5><a href="#">Pay Close Attention To People Who Don’t Clap When You Win recent1.</a></h5>
+                            <p>By Kabbo Liate <span>|</span>25 February 2017</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item recent" style="position: absolute; left: 0px; top: 0px;">
+                        <img src="img/portfolio2.jpg" alt="">
+                        <div class="portfolio-text">
+                            <h5><a href="#">Pay Close Attention To People Who Don’t Clap When You Win recent2.</a></h5>
+                            <p>By Kabbo Liate <span>|</span>25 February 2017</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item popular" style="position: absolute; left: 0px; top: 0px;">
+                        <img src="img/portfolio3.jpg" alt="">
+                        <div class="portfolio-text">
+                            <h5><a href="#">Pay Close Attention To People Who Don’t Clap When You Win popular1.</a></h5>
+                            <p>By Kabbo Liate <span>|</span>25 February 2017</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item popular" style="position: absolute; left: 0px; top: 0px;">
+                        <img src="img/portfolio4.jpg" alt="">
+                        <div class="portfolio-text">
+                            <h5><a href="#">Pay Close Attention To People Who Don’t Clap When You Win popular2.</a></h5>
+                            <p>By Kabbo Liate <span>|</span>25 February 2017</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item users" style="position: absolute; left: 0px; top: 0px;">
+                        <img src="img/portfolio5.jpg" alt="">
+                        <div class="portfolio-text">
+                            <h5><a href="#">Pay Close Attention To People Who Don’t Clap When You Win users1.</a></h5>
+                            <p>By Kabbo Liate <span>|</span>25 February 2017</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item users" style="position: absolute; left: 0px; top: 0px;">
+                        <img src="img/portfolio1.jpg" alt="">
+                        <div class="portfolio-text">
+                            <h5><a href="#">Pay Close Attention To People Who Don’t Clap When You Win users2.</a></h5>
+                            <p>By Kabbo Liate <span>|</span>25 February 2017</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-ads">
+                    <img src="img/sidebar-ads.jpg" alt="">
+                    <p>Place For Your <br> Ad Banner</p>
+                </div>
+                <div class="tags">
+                    <h2 class="sidebar-title">Tags</h2>
+                    <p><a href="#">Adventure</a></p>
+                    <p><a href="#">Animals</a></p>
+                    <p><a href="#">Asia</a></p>
+                    <p><a href="#">Beauty</a></p>
+                    <p><a href="#">Canada</a></p>
+                    <p><a href="#">Celebration</a></p>
+                    <p><a href="#">City</a></p>
+                    <p><a href="#">Coffee</a></p>
+                    <p><a href="#">Constructions</a></p>
+                    <p><a href="#">Europe</a></p>
+                    <p><a href="#">Adventure</a></p>
+                    <p><a href="#">Animals</a></p>
+                    <p><a href="#">Asia</a></p>
+                    <p><a href="#">Beauty</a></p>
+                    <p><a href="#">Canada</a></p>
+                    <p><a href="#">Celebration</a></p>
+                    <p><a href="#">City</a></p>
+                    <p><a href="#">Coffee</a></p>
+                    <p><a href="#">Constructions</a></p>
+                    <p><a href="#">Europe</a></p>
+                    <p><a href="#">Adventure</a></p>
+                    <p><a href="#">Animals</a></p>
+                    <p><a href="#">Asia</a></p>
+                    <p><a href="#">Beauty</a></p>
+                    <p><a href="#">Canada</a></p>
+                </div>
+                <div class="newsletter">
+                    <h2 class="sidebar-title">Subscribe To oUR nEWSLETTER</h2>
+                    <form action="#" method="post">
+                        <input type="email" name="" id="" placeholder="Email">
+                        <input type="submit" value="Subscribe">
+                    </form>
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
