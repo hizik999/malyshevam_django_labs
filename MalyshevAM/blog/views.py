@@ -74,6 +74,9 @@ def blog_category(request, slug):
 def blog_post(request, slug):
     return render(request, 'blog/post.html')
 
+def calendar(request):
+    return render(request, 'praktikums/calendar/praktikum_js.html')
+
 
 class PostsByCategory(ListView):
     template_name = 'blog/index.html'

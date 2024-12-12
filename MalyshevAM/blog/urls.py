@@ -19,6 +19,7 @@ urlpatterns = [
     path('praktikum9_2/', praktikum9_2),
     path('praktikum9_3/', praktikum9_3),
     path('praktikum9_4/', praktikum9_4),
+    path('calendar/', calendar),
 
     ### Blog
     #path('', Home.as_view(), name='home'),

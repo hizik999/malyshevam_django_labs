@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calendar-container {
+    width: 320px;
+    max-width: 100%;
+    background-color: #fff;
+    box-shadow: 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+#monthAndYear {
+    text-align: center;
+    font-size: 24px;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar-table th,
+.calendar-table td {
+    padding: 12px;
+    text-align: center;
+}
+
+.calendar-date {
+    text-align: center;
+    font-size: 20px;
+    color: rgb(236, 16, 16);
+}
+
+.calendar-table thead th {
+    background-color: #ddd;
+}
+
+.calendar-table tbody td {
+    cursor: pointer;
+}
+
+.controls button {
+    padding: 6px 9px;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.controls button:hover {
+    background-color: #ccc;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.active {
+    background-color: #2196F3;
+    color: white;
+}

@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Календарь Малышев АМ</title>
+        <link rel="stylesheet" href="{% static 'calendar/styles.css' %}">
+    </head>
+    <body>
+        <div class="calendar-container">
+            <h1 id="monthAndYear"></h1>
+            <table class="calendar-table">
+                <thead>
+                    <tr>
+                        <th>Пн</th>
+                        <th>Вт</th>
+                        <th>Ср</th>
+                        <th>Чт</th>
+                        <th>Пт</th>
+                        <th>Сб</th>
+                        <th>Вс</th>
+                    </tr>
+                </thead>
+                <tbody id="calendar-body"></tbody>
+            </table>
+            <div class="controls">
+                <button id="previous">Предыдущий месяц</button>
+                <button id="next">Следующий месяц</button>
+            </div>
+            <!-- Элемент для вывода даты -->
+            <p id="dateDisplay" class="calendar-date"></p>
+        </div>
+        <script src="{% static 'calendar/script_2.js' %}"></script>
+    </body>
+</html>
