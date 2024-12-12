@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from django.views.generic import ListView, DetailView
-from .models import Post, Category
+from .models import Post, Category, Tag
 from django.db.models import F
+from .forms import PostsForm
 
 class Home(ListView):
     template_name = 'blog/index.html'
@@ -103,3 +105,13 @@ class GetPost(DetailView):
 
 class PostsByTag(ListView):
     pass
+
+def add_news(request):
+    if request.method == 'POST':
+        form = PostsForm(request.POST)
+        if form.is_valid():
+            Post.objects.create(**form.cleaned_data)
+            return redirect('home')
+    else:
+        form = PostsForm()
+    return render(request, 'blog/add_news.html', {'form': form})
