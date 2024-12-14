@@ -2,7 +2,6 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<!-- {% block title %} {{ title }} :: {{ block.super }} {% endblock %} -->
 <section class="bg-text-area">
     <div class="container">
         <div class="row">
@@ -47,7 +46,7 @@
                             <h4><span>Posted By: <span class="author-name">{{ post.author }} </span></span>
                             </h4>
                             {{ post.content|truncatewords_html:20|safe }}
-                            <h4><span>25 February 2017</span></h4>
+                            <h4><span>{{ post.created_at }}</span></h4>
                         </div>
                     </div>
                     {% endfor %}
@@ -73,15 +72,3 @@
     {% endif %}
 </section>
 {% endblock %}
-
-
-
-<!--
-        <ul>
-            <li><i class="fa fa-angle-left" aria-hidden="true"></i></li>
-            <li class="active">1</li>
-            <li>2</li>
-            <li>3</li>
-            <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
-        </ul>
--->
